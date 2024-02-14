@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoviePedia // Get movies info</title>
+    <link rel="stylesheet" href="./sass/style.scss" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon" />
+
+    <script type="module" defer src="./src/js/controller.js"></script>
+  </head>
+  <body>
+    <!-- back to top -->
+    <button class="btn__back__totop">
+      Back to top
+      <span class="btn__back__totop__icon">
+        <svg>
+          <use href="src/img/icons.svg#down"></use>
+        </svg>
+      </span>
+    </button>
+
+    <div class="app__container">
+      <header class="header">
+        <div class="logo">
+          <a href="/" class="logo__link">
+            <img src="./src/img/logo.png" alt="logo" class="logo__img" />
+          </a>
+        </div>
+
+        <form class="search">
+          <input type="text" placeholder="Search your movie..." class="search__input" />
+          <button class="search__btn">
+            <span class="search__btn__icon">
+              <svg class="search__icon">
+                <use href="src/img/icons.svg#search-outline"></use>
+              </svg>
+            </span>
+            <span>Search</span>
+          </button>
+        </form>
+
+        <div class="bookmark">
+          <button class="bookmark__btn">
+            <span class="bookmark__btn__icon">
+              <svg class="bookmark__icon">
+                <use href="./src/img/icons.svg#bookmarks"></use>
+              </svg>
+            </span>
+            <span>Bookmarks</span>
+          </button>
+
+          <!-- bookmark container -->
+          <div class="bookmark__container">
+            <ul class="bookmark__container__ul"></ul>
+          </div>
+        </div>
+      </header>
+
+      <section class="movies__container">
+        <div class="movie__home__page">
+          <div class="app__settings">
+            <div class="page__info">
+              <h2 class="page__info__heading">Latest</h2>
+            </div>
+
+            <div class="sorting">
+              <button data-filter="all" class="sorting__btn__filter sorting__btn sorting__btn--active">All</button>
+              <button data-filter="movie" class="sorting__btn__filter sorting__btn">Movies</button>
+              <button data-filter="tvSeries" class="sorting__btn__filter sorting__btn">Series</button>
+            </div>
+          </div>
+
+          <div class="movies__grid"></div>
+
+          <div class="pagination"></div>
+        </div>
+
+        <div class="movie__info__box"></div>
+      </section>
+
+      <footer class="footer">
+        <p>Design and develop by Vishal 2023</p>
+      </footer>
+    </div>
+
+    <script>
+      const backToTop = document.querySelector('.btn__back__totop');
+
+      window.addEventListener('scroll', (e) => {
+        if (window.scrollY > 500) {
+          backToTop.style.opacity = '1';
+          backToTop.style.visibility = 'visible';
+          backToTop.style.pointerEvents = 'all';
+        } else {
+          backToTop.style.opacity = '0';
+          backToTop.style.visibility = 'hidden';
+          backToTop.style.pointerEvents = 'none';
+        }
+      });
+
+      backToTop.addEventListener('click', (e) => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+      });
+    </script>
+  </body>
+</html>

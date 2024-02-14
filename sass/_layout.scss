@@ -1,0 +1,76 @@
+// App Container
+.app__container {
+  background-color: #fff;
+  max-width: 120rem;
+  width: 100%;
+  // height: 200dvh;
+  margin: 5rem 2rem;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+// header
+.header {
+  height: 10rem;
+  width: 100%;
+  padding: 0 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+
+  @media only screen and (max-width: $bp-tab) {
+    padding: 2rem 3.4rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem 2.4rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 2rem 2rem;
+  }
+}
+
+// bookamrks
+.bookmark {
+  height: 100%;
+  align-self: stretch;
+}
+
+// App settings
+.app__settings {
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+}
+
+// movies container
+.movies__container {
+  padding: 2rem 5rem 4rem;
+  position: relative;
+  min-height: 100rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem 3.8rem;
+  }
+}
+
+// movie info container
+.movie__info__box {
+  background-color: #fff;
+}

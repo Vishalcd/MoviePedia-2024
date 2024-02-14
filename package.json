@@ -1,0 +1,28 @@
+{
+  "name": "moviepedia",
+  "version": "1.0.0",
+  "description": "Movies info web app.",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist",
+    "compile:sass": "node-sass sass/style.scss src/style/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" src/style/style.comp.css -o src/style/style.prefix.css",
+    "compress:css": "node-sass src/style/style.prefix.css src/style/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Vishal",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "humanize-duration": "^3.31.0",
+    "image-compressor": "^2.0.3",
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.11.0",
+    "postcss-cli": "^11.0.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0"
+  }
+}
