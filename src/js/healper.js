@@ -9,6 +9,7 @@ export const OPTIONS = {
 
 export function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+  console.log('dfefe');
 }
 
 console.log('new feature');
