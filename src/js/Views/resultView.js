@@ -14,6 +14,7 @@ class ResultView extends View {
   }
 
   _generateMarkup(location = 'afterbegin') {
+    console.log(`${this._data[4].primaryImage?.url}`.split('.jpg')[0].concat('SX130.jpg'));
     const markup = this._data
       .map((data) => {
         return `<!-- movie card -->
@@ -21,7 +22,9 @@ class ResultView extends View {
               <div class="movie__card">
                 <a href="#${data.id}" class="movie__link">
                   <div class="movie__cover__container">
-                    <img src="${data.primaryImage?.url}" alt="${data.originalTitleText.text}" onerror="this.src='${noImage}'" "/>
+                    <img src="${data.primaryImage?.url.split('.jpg')[0].concat('SX200.jpg')}" alt="${
+          data.originalTitleText.text
+        }" onerror="this.src='${noImage}'" "/>
                   </div>
 
                   <div class="movie__info__container">

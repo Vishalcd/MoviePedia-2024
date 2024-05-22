@@ -40,26 +40,6 @@ html {
   }
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-
-  @media only screen and (max-width: $bp-large) {
-    width: 5px;
-  }
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-purple-400);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-purple-200);
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;

@@ -65,6 +65,8 @@ async function controlSearch(query) {
 
     // render btn
     PaginationView._render(model.state);
+
+    // add btn to remove ele
   } catch (error) {
     console.log(error);
   }

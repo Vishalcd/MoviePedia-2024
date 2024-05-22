@@ -471,6 +471,10 @@
     font-size: 1.2rem;
     color: #ccc;
   }
+
+  & a {
+    color: var(--color-purple-300);
+  }
 }
 
 // movie info box

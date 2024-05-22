@@ -69,7 +69,7 @@ class MovieView extends View {
             <div class="movie__main__box">
               <div class="movie__main__box--top">
                 <img
-                  src="${this._data.moviePoster}"
+                  src="${this._data.moviePoster.split('.jpg')[0].concat('SX300.jpg')}"
                   alt="dummy"
                   class="movie__main__box__img"
                   onerror="this.src='${noImage}'"
@@ -132,7 +132,12 @@ ${this._data.genere.map((genere) => `<li>${genere.text}</li>`).join(' ')}
             </div>
 
             <div class="movie__info__image__grid">
-            ${this._data.images.map((img, i) => ` <img src="${img}" alt="${this._data.title}-${i + 1}" />`).join(' ')}
+            ${this._data.images
+              .map(
+                (img, i) =>
+                  ` <img src="${img.split('.jpg')[0].concat('SX600.jpg')}" alt="${this._data.title}-${i + 1}" />`
+              )
+              .join(' ')}
               
 
               ${
@@ -147,7 +152,8 @@ ${this._data.genere.map((genere) => `<li>${genere.text}</li>`).join(' ')}
                   webkitallowfullscreen="true"
                   frameborder="no"
                   scrolling="no"
-                  __idm_id__="3973122"
+                  __idm_id__="3973122",
+                  poster=${noImage}
                 ></iframe>
               </div>`
                   : ''
